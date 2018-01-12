@@ -1,4 +1,5 @@
 import os
+import sys
 
 import subprocess
 
@@ -8,10 +9,10 @@ here = os.path.abspath(os.path.dirname(__file__))
 BINARY_DIR = os.path.join(here, 'bin')
 
 BINARIES = {
-    'Windows': os.path.join(BINARY_DIR, 'h4tonccf_nc4.exe')}
+    'win32': os.path.join(BINARY_DIR, 'h4tonccf_nc4.exe')}
 
 
-def run(infile, outfile=None, platform='Windows'):
+def run(infile, outfile=None, platform=sys.platform):
     """Run h4tonccf binary
 
     Parameters
